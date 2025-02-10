@@ -8,6 +8,7 @@ public class SumarMatriz {
      * int filas y columnas son el numero de estas que vamos a elegir.
      * Las matrices A y B son las dos matrices que vamos a sumar entre ellas la matriz C es donde vamos a guardar el resultado
      */
+    
     private int filas, columnas;
     private int[][] A, B, C;
     private Scanner sc = new Scanner(System.in);
