@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Aritmetico {
+public class aritmetico {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in); // Scanner para leer la entrada del usuario
