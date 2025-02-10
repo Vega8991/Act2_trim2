@@ -5,7 +5,7 @@ public class Login {
 
     public static void main(String[] args) {
     	
-    	Usuario usuario1 = new UsuarioTipo1("Usuario1", "Contrasena1");
+    	UsuarioTipo2 usuario2 = new UsuarioTipo2("Usuario1", "Contrasena1");
     	
         Scanner scanner = new Scanner(System.in);
 
@@ -15,11 +15,12 @@ public class Login {
         String contrasena = scanner.nextLine();
         
         try {
-            usuario1.comprobarUsuario(usuario, contrasena);
+            usuario2.comprobarUsuario(usuario, contrasena);
             System.out.println("Inicio de sesión exitoso.");
         } catch (IllegalArgumentException e) {
             System.out.println("Error: " + e.getMessage());
         }
-        scanner.close();
+        usuario2.sumarMatrices();
+        usuario2.mostrarMatrices();
     }
 }
