@@ -1,11 +1,13 @@
 import java.util.Scanner;
 
-public class aritmetico {
+public class Aritmetico {
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in); // Scanner para leer la entrada del usuario
-        int opcion = -1;
-
+    static Scanner scanner = new Scanner(System.in); // Scanner para leer la entrada del usuario
+    
+    public static void main(String[] args) { 
+    	int opcion = -1;
+   
+    	     
         // Bucle principal que seguirá pidiendo opciones hasta que el usuario elija salir (opcion 0)
         while (opcion != 0) {
             // Mostrar las opciones de operaciones
@@ -44,41 +46,21 @@ public class aritmetico {
                             // Realizar la operación según la opción seleccionada
                             switch (opcion) {
                                 case 1: // Suma
-                                    if (primero) {
-                                        resultado = num; // El primer número se asigna como resultado inicial
-                                        primero = false;
-                                    } else {
-                                        resultado += num;
-                                    }
+                                	resultado = Suma(resultado, num, primero);
+                                    primero = false;
                                     break;
                                 case 2: // Resta
-                                    if (primero) {
-                                        resultado = num; // El primer número se asigna como resultado inicial
-                                        primero = false;
-                                    } else {
-                                        resultado -= num;
-                                    }
+                                	resultado = Resta(resultado, num, primero);
+                                    primero = false;
                                     break;
                                 case 3: // Multiplicación
-                                    if (primero) {
-                                        resultado = num; // El primer número se asigna como resultado inicial
-                                        primero = false;
-                                    } else {
-                                        resultado *= num;
-                                    }
-                                    break;
+                                	 resultado = Multiplicacion(resultado, num, primero);
+                                     primero = false;
+                                     break;
+                                 
                                 case 4: // División
-                                    if (primero) {
-                                        resultado = num; // El primer número se asigna como resultado inicial
-                                        primero = false;
-                                    } else {
-                                        if (num != 0) {
-                                            resultado /= num;
-                                        } else {
-                                            System.out.println("Error: No se puede dividir entre cero.");
-                                            continue; // Salta al siguiente número
-                                        }
-                                    }
+                                	resultado = Division(resultado, num, primero);
+                                    primero = false;
                                     break;
                                 default:
                                     System.out.println("Opción no válida.");
@@ -97,6 +79,42 @@ public class aritmetico {
         }
 
         System.out.println("Saliendo...");
-        scanner.close(); // Cerrar el scanner al final
+        
+    }
+    public static double Suma(double resultado, double num, boolean primero) {
+ 	   if (primero) {
+            return num;  // El primer número se asigna como resultado inicial
+        } else {
+            return resultado + num;  // Sumar al resultado
+        }
+    }
+         
+    public  static double Resta(double resultado, double num, boolean primero) {
+ 	   if (primero) {
+            return num;  // El primer número se asigna como resultado inicial
+        } else {
+            return resultado - num;  // Restar al resultado
+        }
+    }
+    
+    public  static double Multiplicacion(double resultado, double num, boolean primero) {
+ 	   if (primero) {
+            return num;  // El primer número se asigna como resultado inicial
+        } else {
+            return resultado * num;  // Multiplicar al resultado
+        }
+    }
+    
+    public  static double Division(double resultado, double num, boolean primero) {
+ 	   if (primero) {
+            return num;  // El primer número se asigna como resultado inicial
+        } else {
+            if (num != 0) {
+                return resultado / num;  // Dividir al resultado
+            } else {
+                System.out.println("Error: No se puede dividir entre cero.");
+                return resultado;  // No realizar la división, mantener el resultado actual
+            }
+        }
     }
 }
