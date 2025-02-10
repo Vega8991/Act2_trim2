@@ -38,5 +38,3 @@ public class LoginPrueba {
         scanner.close();
     }
 }
-
-holi
