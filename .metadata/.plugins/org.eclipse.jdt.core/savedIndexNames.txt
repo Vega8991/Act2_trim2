@@ -1,0 +1,1 @@
+INDEX VERSION 1.134+C:\Users\alvar\Dropbox\Grado Superior\Curso 2024-25\Segundo trimestre\Programación\ActividadesEvaluables\LoginUser\Act2_trim2\.metadata\.plugins\org.eclipse.jdt.core

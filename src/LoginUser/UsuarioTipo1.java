@@ -1,15 +1,17 @@
 package LoginUser;
-
 import java.util.Scanner;
 
+/**
+ * Clase que representa a un usuario de tipo 1 con capacidad para realizar operaciones aritméticas.
+ */
 public class UsuarioTipo1 extends Usuario {
-    public UsuarioTipo1(String usuario, String contraseña) {
-        super(usuario, contraseña, 1);
-    }
-
-    public void operacionAritmetica() {
-        Scanner scanner = new Scanner(System.in); // Scanner para leer la entrada del usuario
-        int opcion = -1;
+	public UsuarioTipo1(String usuario, String contraseña) {
+		super(usuario, contraseña, 1);
+	}
+	
+	public void operacionAritmetica() {
+		Scanner scanner = new Scanner(System.in); // Scanner para leer la entrada del usuario
+    	int opcion = -1;
 
         // Bucle principal que seguirá pidiendo opciones hasta que el usuario elija
         // salir (opcion 0)
@@ -63,8 +65,9 @@ public class UsuarioTipo1 extends Usuario {
                                     break;
 
                                 case 4: // División
-                                    resultado = Division(resultado, num, primero);
+                                	resultado = Division(resultado, num, primero);
                                     primero = false;
+
                                     break;
                                 default:
                                     System.out.println("Opción no válida.");
@@ -83,36 +86,35 @@ public class UsuarioTipo1 extends Usuario {
         }
 
         System.out.println("Saliendo...");
-
+        
     }
-
     public static double Suma(double resultado, double num, boolean primero) {
-        if (primero) {
-            return num; // El primer número se asigna como resultado inicial
+ 	   if (primero) {
+            return num;  // El primer número se asigna como resultado inicial
         } else {
             return resultado + num; // Sumar al resultado
         }
     }
-
-    public static double Resta(double resultado, double num, boolean primero) {
-        if (primero) {
-            return num; // El primer número se asigna como resultado inicial
+         
+    public  static double Resta(double resultado, double num, boolean primero) {
+ 	   if (primero) {
+            return num;  // El primer número se asigna como resultado inicial
         } else {
             return resultado - num; // Restar al resultado
         }
     }
-
-    public static double Multiplicacion(double resultado, double num, boolean primero) {
-        if (primero) {
-            return num; // El primer número se asigna como resultado inicial
+    
+    public  static double Multiplicacion(double resultado, double num, boolean primero) {
+ 	   if (primero) {
+            return num;  // El primer número se asigna como resultado inicial
         } else {
             return resultado * num; // Multiplicar al resultado
         }
     }
-
-    public static double Division(double resultado, double num, boolean primero) {
-        if (primero) {
-            return num; // El primer número se asigna como resultado inicial
+    
+    public  static double Division(double resultado, double num, boolean primero) {
+ 	   if (primero) {
+            return num;  // El primer número se asigna como resultado inicial
         } else {
             if (num != 0) {
                 return resultado / num; // Dividir al resultado
