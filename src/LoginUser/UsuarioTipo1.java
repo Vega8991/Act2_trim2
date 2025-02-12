@@ -1,20 +1,27 @@
-package LoginUser;
 import java.util.Scanner;
 
 /**
  * Clase que representa a un usuario de tipo 1 con capacidad para realizar operaciones aritméticas.
  */
 public class UsuarioTipo1 extends Usuario {
-	public UsuarioTipo1(String usuario, String contraseña) {
-		super(usuario, contraseña, 1);
-	}
-	
-	public void operacionAritmetica() {
-		Scanner scanner = new Scanner(System.in); // Scanner para leer la entrada del usuario
-    	int opcion = -1;
 
-        // Bucle principal que seguirá pidiendo opciones hasta que el usuario elija
-        // salir (opcion 0)
+    /**
+     * Constructor para inicializar un objeto UsuarioTipo1.
+     * @param usuario El nombre del usuario.
+     * @param contraseña La contraseña del usuario.
+     */
+    public UsuarioTipo1(String usuario, String contraseña) {
+        super(usuario, contraseña, 1);
+    }
+
+    /**
+     * Permite al usuario realizar operaciones aritméticas básicas (suma, resta, multiplicación, división).
+     */
+    public void operacionAritmetica() {
+        Scanner scanner = new Scanner(System.in); // Scanner para leer la entrada del usuario
+        int opcion = -1;
+
+        // Bucle principal que seguirá pidiendo opciones hasta que el usuario elija salir (opcion 0)
         while (opcion != 0) {
             // Mostrar las opciones de operaciones
             System.out.println("\nSelecciona una operación:");
@@ -65,7 +72,10 @@ public class UsuarioTipo1 extends Usuario {
                                     break;
 
                                 case 4: // División
-                                	resultado = Division(resultado, num, primero);
+                                    if(num == 0 && primero) {
+                                        throw new ArithmeticException();
+                                    }
+                                    resultado = Division(resultado, num, primero);
                                     primero = false;
 
                                     break;
@@ -86,42 +96,75 @@ public class UsuarioTipo1 extends Usuario {
         }
 
         System.out.println("Saliendo...");
-        
     }
+
+    /**
+     * Realiza la suma de dos números.
+     *
+     * @param resultado El resultado acumulado.
+     * @param num El número a sumar.
+     * @param primero Indica si es el primer número de la operación.
+     * @return El resultado de la suma.
+     */
     public static double Suma(double resultado, double num, boolean primero) {
- 	   if (primero) {
+        if (primero) {
             return num;  // El primer número se asigna como resultado inicial
         } else {
-            return resultado + num; // Sumar al resultado
+            return resultado + num;  // Sumar al resultado
         }
     }
-         
-    public  static double Resta(double resultado, double num, boolean primero) {
- 	   if (primero) {
+
+    /**
+     * Realiza la resta de dos números.
+     *
+     * @param resultado El resultado acumulado.
+     * @param num El número a restar.
+     * @param primero Indica si es el primer número de la operación.
+     * @return El resultado de la resta.
+     */
+    public static double Resta(double resultado, double num, boolean primero) {
+        if (primero) {
             return num;  // El primer número se asigna como resultado inicial
         } else {
-            return resultado - num; // Restar al resultado
+            return resultado - num;  // Restar al resultado
         }
     }
-    
-    public  static double Multiplicacion(double resultado, double num, boolean primero) {
- 	   if (primero) {
+
+    /**
+     * Realiza la multiplicación de dos números.
+     *
+     * @param resultado El resultado acumulado.
+     * @param num El número a multiplicar.
+     * @param primero Indica si es el primer número de la operación.
+     * @return El resultado de la multiplicación.
+     */
+    public static double Multiplicacion(double resultado, double num, boolean primero) {
+        if (primero) {
             return num;  // El primer número se asigna como resultado inicial
         } else {
-            return resultado * num; // Multiplicar al resultado
+            return resultado * num;  // Multiplicar al resultado
         }
     }
-    
-    public  static double Division(double resultado, double num, boolean primero) {
- 	   if (primero) {
+
+    /**
+     * Realiza la división de dos números.
+     *
+     * @param resultado El resultado acumulado.
+     * @param num El número a dividir.
+     * @param primero Indica si es el primer número de la operación.
+     * @return El resultado de la división.
+     */
+    public static double Division(double resultado, double num, boolean primero) {
+        if (primero) {
             return num;  // El primer número se asigna como resultado inicial
         } else {
             if (num != 0) {
-                return resultado / num; // Dividir al resultado
+                return resultado / num;  // Dividir al resultado
             } else {
                 System.out.println("Error: No se puede dividir entre cero.");
-                return resultado; // No realizar la división, mantener el resultado actual
+                return resultado;  // No realizar la división, mantener el resultado actual
             }
         }
     }
 }
+
