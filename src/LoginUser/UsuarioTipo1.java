@@ -72,8 +72,13 @@ public class UsuarioTipo1 extends Usuario {
                                     break;
 
                                 case 4: // División
+                                    if(num == 0 && primero) {
+                                        throw new ArithmeticException();
+                                        break;
+                                    }
                                     resultado = Division(resultado, num, primero);
                                     primero = false;
+
                                     break;
                                 default:
                                     System.out.println("Opción no válida.");
