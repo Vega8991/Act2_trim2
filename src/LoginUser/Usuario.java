@@ -8,8 +8,6 @@ public abstract class Usuario {
     private String contraseña;
     private int tipo;
 
-<<<<<<< HEAD
-=======
     /**
      * Constructor para inicializar un objeto Usuario.
      *
@@ -17,22 +15,18 @@ public abstract class Usuario {
      * @param contraseña La contraseña del usuario.
      * @param tipo El tipo de usuario.
      */
->>>>>>> dev
     public Usuario(String nombreUsuario, String contraseña, int tipo) {
         this.nombreUsuario = nombreUsuario;
         this.contraseña = contraseña;
         this.tipo = tipo;
     }
 
-<<<<<<< HEAD
-=======
     /**
      * Comprueba si las credenciales proporcionadas son válidas.
      * @param usuario El nombre de usuario a comprobar.
      * @param contrasena La contraseña a comprobar.
      * @throws IllegalArgumentException Si las credenciales no son válidas.
      */
->>>>>>> dev
     public void comprobarUsuario(String usuario, String contrasena) {
         if (!usuario.matches("[a-zA-Z0-9]+")) {
             throw new IllegalArgumentException("El usuario solo puede contener letras y números.");

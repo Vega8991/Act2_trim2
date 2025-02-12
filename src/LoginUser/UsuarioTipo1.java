@@ -74,7 +74,7 @@ public class UsuarioTipo1 extends Usuario {
 
                                 case 4: // División
                                     if(num == 0 && primero) {
-                                        throw new ArithmeticException();
+                                        throw new ArithmeticException("No se puede dividir entre cero.");
                                     }
                                     resultado = Division(resultado, num, primero);
                                     primero = false;
