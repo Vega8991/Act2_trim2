@@ -15,7 +15,7 @@ public class Login {
             System.out.print("Introduce la contraseña del usuario 1(mínimo 6 carácteres, debe contener un número): ");
             String contrasena1 = scanner.nextLine();
             usuario1.comprobarUsuario(userName1, contrasena1);
-            System.out.println("Inicio de sesión exitoso en usuario 2.");
+            System.out.println("Inicio de sesión exitoso en usuario 1.");
             usuario1.operacionAritmetica();
         } catch (IllegalArgumentException e) {
             System.out.println("Error: " + e.getMessage());
@@ -27,7 +27,7 @@ public class Login {
             System.out.print("Introduce la contraseña del usuario 2(mínimo 6 carácteres, debe contener un número): ");
             String contrasena2 = scanner.nextLine();
             usuario2.comprobarUsuario(userName2, contrasena2);
-            System.out.println("Inicio de sesión exitoso.");
+            System.out.println("Inicio de sesión exitoso en el usuario 2.");
             usuario2.sumarMatrices();
             usuario2.mostrarMatrices();
         } catch (IllegalArgumentException e) {
