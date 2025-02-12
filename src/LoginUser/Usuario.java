@@ -1,4 +1,3 @@
-package LoginUser;
 
 /**
  * Clase abstracta que representa a un usuario genérico con métodos para comprobar credenciales.

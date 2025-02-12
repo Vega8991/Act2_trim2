@@ -72,13 +72,15 @@ public class UsuarioTipo1 extends Usuario {
                                     break;
 
                                 case 4: // División
-                                    if(num == 0 && primero) {
-                                        throw new ArithmeticException();
-                                    }
-                                    resultado = Division(resultado, num, primero);
-                                    primero = false;
-
-                                    break;
+                                	try {
+                                		resultado = Division(resultado, num, primero);
+                                        primero = false;
+                                        break;
+                                	} catch (Exception e) {
+                                		System.out.println(e.getMessage());
+                                		break;
+                                	}
+                                    
                                 default:
                                     System.out.println("Opción no válida.");
                             }
@@ -155,14 +157,13 @@ public class UsuarioTipo1 extends Usuario {
      * @return El resultado de la división.
      */
     public static double Division(double resultado, double num, boolean primero) {
-        if (primero) {
+        if (primero && num != 0) {
             return num;  // El primer número se asigna como resultado inicial
         } else {
             if (num != 0) {
                 return resultado / num;  // Dividir al resultado
             } else {
-                System.out.println("Error: No se puede dividir entre cero.");
-                return resultado;  // No realizar la división, mantener el resultado actual
+            	throw new ArithmeticException("No se puede dividir por cero");
             }
         }
     }
