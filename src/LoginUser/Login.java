@@ -16,8 +16,13 @@ public class Login {
             String contrasena1 = scanner.nextLine();
             usuario1.comprobarUsuario(userName1, contrasena1);
             System.out.println("Inicio de sesión exitoso en usuario 1.");
-            usuario1.operacionAritmetica();
         } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+
+        try {
+            usuario1.operacionAritmetica();
+        } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
         
@@ -28,9 +33,15 @@ public class Login {
             String contrasena2 = scanner.nextLine();
             usuario2.comprobarUsuario(userName2, contrasena2);
             System.out.println("Inicio de sesión exitoso en el usuario 2.");
+            
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+
+        try {
             usuario2.sumarMatrices();
             usuario2.mostrarMatrices();
-        } catch (IllegalArgumentException e) {
+        } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
     }
