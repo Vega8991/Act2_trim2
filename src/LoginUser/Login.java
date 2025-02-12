@@ -1,4 +1,4 @@
-package LoginUser;
+
 import java.util.Scanner;
 
 /**
