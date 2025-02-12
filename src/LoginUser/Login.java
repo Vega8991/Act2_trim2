@@ -1,14 +1,15 @@
 package LoginUser;
+
 import java.util.Scanner;
 
-public class Login {   
+public class Login {
 
     public static void main(String[] args) {
-    	
+
         UsuarioTipo1 usuario1 = new UsuarioTipo1("Usuario1", "Contrasena1");
-    	UsuarioTipo2 usuario2 = new UsuarioTipo2("Usuario2", "Contrasena2");
+        UsuarioTipo2 usuario2 = new UsuarioTipo2("Usuario2", "Contrasena2");
         Scanner scanner = new Scanner(System.in);
-        
+
         try {
             System.out.print("Introduce nombre del usuario 1 (solo letras y números): ");
             String userName1 = scanner.nextLine();
@@ -25,7 +26,7 @@ public class Login {
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
-        
+
         try {
             System.out.print("Introduce nombre del usuario 2 (solo letras y números): ");
             String userName2 = scanner.nextLine();
@@ -33,7 +34,7 @@ public class Login {
             String contrasena2 = scanner.nextLine();
             usuario2.comprobarUsuario(userName2, contrasena2);
             System.out.println("Inicio de sesión exitoso en el usuario 2.");
-            
+
         } catch (IllegalArgumentException e) {
             System.out.println("Error: " + e.getMessage());
         }

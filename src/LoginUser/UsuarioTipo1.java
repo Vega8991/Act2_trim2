@@ -1,16 +1,18 @@
 package LoginUser;
+
 import java.util.Scanner;
 
 public class UsuarioTipo1 extends Usuario {
-	public UsuarioTipo1(String usuario, String contraseña) {
-		super(usuario, contraseña, 1);
-	}
-	
-	public void operacionAritmetica() {
-		Scanner scanner = new Scanner(System.in); // Scanner para leer la entrada del usuario
-    	int opcion = -1;
+    public UsuarioTipo1(String usuario, String contraseña) {
+        super(usuario, contraseña, 1);
+    }
 
-        // Bucle principal que seguirá pidiendo opciones hasta que el usuario elija salir (opcion 0)
+    public void operacionAritmetica() {
+        Scanner scanner = new Scanner(System.in); // Scanner para leer la entrada del usuario
+        int opcion = -1;
+
+        // Bucle principal que seguirá pidiendo opciones hasta que el usuario elija
+        // salir (opcion 0)
         while (opcion != 0) {
             // Mostrar las opciones de operaciones
             System.out.println("\nSelecciona una operación:");
@@ -48,20 +50,20 @@ public class UsuarioTipo1 extends Usuario {
                             // Realizar la operación según la opción seleccionada
                             switch (opcion) {
                                 case 1: // Suma
-                                	resultado = Suma(resultado, num, primero);
+                                    resultado = Suma(resultado, num, primero);
                                     primero = false;
                                     break;
                                 case 2: // Resta
-                                	resultado = Resta(resultado, num, primero);
+                                    resultado = Resta(resultado, num, primero);
                                     primero = false;
                                     break;
                                 case 3: // Multiplicación
-                                	 resultado = Multiplicacion(resultado, num, primero);
-                                     primero = false;
-                                     break;
-                                 
+                                    resultado = Multiplicacion(resultado, num, primero);
+                                    primero = false;
+                                    break;
+
                                 case 4: // División
-                                	resultado = Division(resultado, num, primero);
+                                    resultado = Division(resultado, num, primero);
                                     primero = false;
                                     break;
                                 default:
@@ -81,41 +83,42 @@ public class UsuarioTipo1 extends Usuario {
         }
 
         System.out.println("Saliendo...");
-        
+
     }
+
     public static double Suma(double resultado, double num, boolean primero) {
- 	   if (primero) {
-            return num;  // El primer número se asigna como resultado inicial
+        if (primero) {
+            return num; // El primer número se asigna como resultado inicial
         } else {
-            return resultado + num;  // Sumar al resultado
+            return resultado + num; // Sumar al resultado
         }
     }
-         
-    public  static double Resta(double resultado, double num, boolean primero) {
- 	   if (primero) {
-            return num;  // El primer número se asigna como resultado inicial
+
+    public static double Resta(double resultado, double num, boolean primero) {
+        if (primero) {
+            return num; // El primer número se asigna como resultado inicial
         } else {
-            return resultado - num;  // Restar al resultado
+            return resultado - num; // Restar al resultado
         }
     }
-    
-    public  static double Multiplicacion(double resultado, double num, boolean primero) {
- 	   if (primero) {
-            return num;  // El primer número se asigna como resultado inicial
+
+    public static double Multiplicacion(double resultado, double num, boolean primero) {
+        if (primero) {
+            return num; // El primer número se asigna como resultado inicial
         } else {
-            return resultado * num;  // Multiplicar al resultado
+            return resultado * num; // Multiplicar al resultado
         }
     }
-    
-    public  static double Division(double resultado, double num, boolean primero) {
- 	   if (primero) {
-            return num;  // El primer número se asigna como resultado inicial
+
+    public static double Division(double resultado, double num, boolean primero) {
+        if (primero) {
+            return num; // El primer número se asigna como resultado inicial
         } else {
             if (num != 0) {
-                return resultado / num;  // Dividir al resultado
+                return resultado / num; // Dividir al resultado
             } else {
                 System.out.println("Error: No se puede dividir entre cero.");
-                return resultado;  // No realizar la división, mantener el resultado actual
+                return resultado; // No realizar la división, mantener el resultado actual
             }
         }
     }
