@@ -1,3 +1,4 @@
+package LoginUser;import java.util.Scanner;
 import java.util.Scanner;
 
 /**
@@ -35,7 +36,7 @@ public class UsuarioTipo1 extends Usuario {
             try {
                 opcion = Integer.parseInt(scanner.nextLine());
 
-                if (opcion != 0) {
+                if (opcion == 1 || opcion == 2 || opcion == 3 || opcion == 4) {
                     // Inicializamos la variable para el resultado
                     double resultado = 0;
                     boolean primero = true; // Para identificar si es el primer número
@@ -91,6 +92,10 @@ public class UsuarioTipo1 extends Usuario {
 
                     // Mostrar el resultado de la operación
                     System.out.println("El resultado es: " + resultado);
+                } else if (opcion == 0 ){
+                	
+                } else {
+                	System.out.println("Debes escoger una de las opciones");
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Por favor, selecciona una opción válida.");

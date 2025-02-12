@@ -1,3 +1,4 @@
+package LoginUser;
 
 /**
  * Clase abstracta que representa a un usuario genérico con métodos para comprobar credenciales.
@@ -26,16 +27,15 @@ public abstract class Usuario {
      * @param contrasena La contraseña a comprobar.
      * @throws IllegalArgumentException Si las credenciales no son válidas.
      */
-    public void comprobarUsuario(String usuario, String contrasena) {
+    public boolean comprobarUsuario(String usuario, String contrasena) {
         if (!usuario.matches("[a-zA-Z0-9]+")) {
             throw new IllegalArgumentException("El usuario solo puede contener letras y números.");
-        }
-        if (!contrasena.matches("^([A-Z+]([a-z+]{9})[0-9+])") || contrasena.length() < 6 || contrasena.length() > 20) {
+        } else if (!contrasena.matches("^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)[A-Za-z\\d]{6,20}$")) {
             throw new IllegalArgumentException(
-                    "La contraseña debe tener al menos 6 caracteres y contener al menos un número.");
-        }
-        if (!usuario.equals(this.nombreUsuario) || !contrasena.equals(this.contraseña)) {
+                    "La contraseña debe tener entre 6 y 20 caracteres, incluir al menos una mayúscula, una minúscula y un número.");
+        } else if(!usuario.equals(this.nombreUsuario) || !contrasena.equals(this.contraseña)) {
             throw new IllegalArgumentException("Usuario o contraseña incorrectos.");
-        }
+        } else 
+        return true;
     }
 }
